@@ -1,0 +1,46 @@
+from django.conf.urls import patterns, include, url
+
+from django.contrib import admin
+admin.autodiscover()
+
+urlpatterns = patterns('',
+    # Examples:
+    url(r'^$', 'bigdata.views.index', name='index'),
+    #url(r'^page1/', 'bigdata.views.home', name=''),
+    url(r'^bigdash/', 'bigdata.views.bigdash',name='bigdash'),
+    url(r'^page1/', 'bigdata.views.page1',name='page1'),
+    url(r'^page2/', 'bigdata.views.page2',name='page2'),
+    url(r'^page3/', 'bigdata.views.page3',name='page3'),
+    url(r'^hdfs/', 'bigdata.views.hdfs',name='hdfs'),
+    url(r'^mapred12/', 'bigdata.views.mapred12',name='mapred12'),
+    url(r'^status/', 'bigdata.views.status',name='status'),
+    url(r'^jobs/', 'bigdata.views.jobs',name='jobs'),
+    url(r'^datanode/', 'bigdata.views.datanode',name='datanode'),
+    url(r'^spage1/', 'bigdata.views.spage1',name='spage1'),
+    url(r'^spage2/', 'bigdata.views.spage2',name='spage2'),
+    url(r'^spage3/', 'bigdata.views.spage3',name='spage3'),
+
+    url(r'^index/', 'Godmode.views.index', name='index'),
+    url(r'^MLHome/', 'Godmode.views.MLHome',name='MLHome'),
+    url(r'^modeldown/', 'Godmode.views.modeldown',name='modeldown'),
+    url(r'^mlpage1/', 'Godmode.views.mlpage1',name='mlpage1'),
+    url(r'^downmodel/', 'Godmode.views.downmodel',name='downmodel'),
+    url(r'^mlpage2/', 'Godmode.views.mlpage2',name='mlpage2'),
+    url(r'^mlpage3/', 'Godmode.views.mlpage3',name='mlpage3'),
+    url(r'^mlpage4/', 'Godmode.views.mlpage4',name='mlpage4'),
+    url(r'^mlpage5/', 'Godmode.views.mlpage5',name='mlpage5'),
+    url(r'^mlpage6/', 'Godmode.views.mlpage6',name='mlpage6'),
+    url(r'^SGD/', 'Godmode.views.SGD',name='SGD'),
+    url(r'^modelresult/', 'Godmode.views.modelresult',name='modelresult'),
+    url(r'^satisfied/', 'Godmode.views.satisfied',name='satisfied'),
+    url(r'^notsatisfied/', 'Godmode.views.notsatisfied',name='notsatisfied'),
+    url(r'^valpred/', 'Godmode.views.valpred',name='valpred'),
+    url(r'^show1/', 'Godmode.views.show1',name='show1'),
+    url(r'^testview/', 'Godmode.views.testview',name='testview'),
+    url(r'^modelsave/', 'Godmode.views.modelsave',name='modelsave'),
+    url(r'^modelsaved/', 'Godmode.views.modelsaved',name='modelsaved'),
+    url(r'^valpred/', 'Godmode.views.valpred',name='valpred'),
+    # url(r'^blog/', include('blog.urls')),
+
+    url(r'^admin/', include(admin.site.urls)),
+)

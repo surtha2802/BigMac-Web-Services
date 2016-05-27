@@ -1,0 +1,110 @@
+#!usr/local/spark/python
+from pyspark import SparkContext
+import os
+from pyspark.mllib.regression import LabeledPoint
+import numpy as np
+from pyspark.mllib.regression import LabeledPoint, LinearRegressionWithSGD, LinearRegressionModel
+from pyspark.mllib.classification import SVMWithSGD, SVMModel
+sc=SparkContext("local")
+from pyspark.mllib.classification import LogisticRegressionWithLBFGS, LogisticRegressionModel
+
+data=open("/root/Desktop/delim.LOL","r")
+temp=data.readlines()
+delim=temp[0].strip()
+dataset=temp[1].strip()
+lab=open("/root/Desktop/label.LOL","r")
+label=lab.readlines()[0].strip()
+param=open("/root/Desktop/parameters.LOL","r")
+temp=param.readlines()
+stepe=temp[0].strip()
+iters=temp[1].strip()
+supermodel=temp[2].strip()
+
+
+# Load and parse the data
+
+def parsePoint1(line):
+	values = [float(x) for x in line.split(' ')]
+	
+	#values=line.split(',')
+	return LabeledPoint(values[1],values[2:])
+
+def parsePoint(line):
+	values = [float(x) for x in line.split(' ')]
+	
+	#values=line.split(',')
+	if str(label)=="0":
+		return LabeledPoint(values[0],values[1:])
+	else:
+		return LabeledPoint(values[int(label)],values[0:int(label)]+values[int(label)+1:])
+
+	
+
+
+
+ko="/root/Desktop/%s" %dataset
+data = sc.textFile(ko)
+#print data.take(5),"lllllllllllllllllllllllllllllllllllllllllllllllll"
+header=data.first()
+print header,"kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+data=data.filter(lambda x:x!=header)
+parsedData = data.map(parsePoint)
+print parsedData.take(5),"oooooooooooooooooooooooooooooooooooooooooooooooo"
+
+train_data,test_data=data.randomSplit([.7,.3])
+parsedtrainData = train_data.map(parsePoint)
+parsedtestData = test_data.map(parsePoint)
+# Build the model
+#model = LogisticRegressionWithLBFGS.train(parsedData)
+#model = LinearRegressionWithSGD.train(parsedtrainData,step=0.00000000000000000001,iterations=10000)
+model = LinearRegressionWithSGD.train(parsedtrainData,step=stepe,iterations=iters)
+#, iterations=100, step=0.0001 0.000000001 iterations=1000
+#  0.00000000000000000000001
+# Evaluate the model on training data
+
+
+valuesAndPreds = parsedData.map(lambda p: (p.label, model.predict(p.features)))
+print valuesAndPreds.count(),"iuieuwieuiueieuiwuieuriuwieuieuiruwiurieuriue"
+print valuesAndPreds.take(10),"lkjkhjklhljhlnbbbbbbbbbbbbbbbbbburiue"
+MSE = (valuesAndPreds.map(lambda (v, p): (v - p)**2).reduce(lambda x, y: x + y) )/ valuesAndPreds.count()
+print MSE,"jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
+os.system("rm -rf /root/Desktop/valpred.html")
+k=valuesAndPreds.take(500)
+print ("kkkkkkkkkkkkkkkkkkkkkkkkkllllllllllllllllllllll")
+o=open("/root/Desktop/valpred.html","w")
+os.system("echo hiii > /root/Desktop/hhh.txt")
+o.write("<html>")
+o.write("<body>")
+o.write("\n")
+o.write("<h3><b>Values&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPredictions</b></h3>")
+
+for i in range(500):
+	
+	o.write(str(k[i][0]))
+	o.write("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp")
+	o.write(str(k[i][1]))
+	o.write("<br>")
+	o.write("\n")
+o.write("</body>")
+o.write("</html>")
+
+os.system("rm -rf /root/Desktop/mpv2/mapredtest1/templates/valpred.html")
+os.system("cp /root/Desktop/valpred.html /root/Desktop/mpv2/mapredtest1/templates/valpred.html")
+
+'''
+trainerr=valuesAndPreds.filter(lambda(v,p):abs(v-p)>20000).count()/float(parsedData.count())
+print valuesAndPreds.count(),"iuieuwieuiueieuiwuieuriuwieuieuiruwiurieuriue"
+#print("Mean Squared Error = " + str(MSE)+"bkbkbbbbbbbbbbbbbbbbbbbbbbbbkkbkbkkkkkkkkkkkkkkkkkkkkkkkkkkkkkbkbkbkb")
+print parsedtrainData.take(5),"hjjhjhjhjjjjjjjjjjjjjjjjjj"
+print parsedtestData.take(1)[0].features,"lnlnlnnnlnnnnnnnnnnnnnnlnlnanslnlnslnlansdlnads"
+print "answer bjbsbdjk=" , model.predict(parsedtestData.take(1)[0].features)
+print parsedtestData.take(1)[0].label ,"lkmnhbgvyctexrwzea"
+print parsedtrainData.take(5)
+print trainerr,"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+'''
+# Save and load model
+model.save(sc, supermodel)
+sameModel = LinearRegressionModel.load(sc, supermodel)
+
+
+

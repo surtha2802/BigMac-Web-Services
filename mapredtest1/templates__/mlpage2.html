@@ -1,0 +1,11 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+
+<form method="POST" action="">{% csrf_token %}
+			{{ form.as_p }}
+			<!--<p>*Required Field</p>-->
+			<input type='submit' value='Submit' name='form' />
+</form>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+
+<b>Your model has been saved</b>
+
+{% endblock %}

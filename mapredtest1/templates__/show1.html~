@@ -1,0 +1,13 @@
+{% extends "blankworkspace.html" %}
+
+p>{{run}}</p>
+
+
+
+<br>
+<br>
+<p> Do you want to save this model </p>
+<br>
+<p><a href="/modelsave/" > Yes </a></p>
+</body>
+</html>

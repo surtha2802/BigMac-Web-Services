@@ -1,0 +1,21 @@
+{% extends "blankworkspace.html" %}
+{% load static %}
+{% block mapred1 %}
+<style>
+#pop
+{
+    width    : 1200px;
+    height   : 800px;
+    
+}
+</style>
+<div class="breadcrumb" id="pop" >
+<br>
+<br><br>
+<a href="{{run}}"><center><p><h1> Download the Output File  <img src="{% static 'img/down1.jpg'  %}" height=100 width=100 /></h1></p></center></a>
+</div>
+{% autoescape off %}
+{{run}}
+{% endautoescape %}
+
+{% endblock %}

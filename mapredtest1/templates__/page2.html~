@@ -1,0 +1,28 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+	<div>
+		<div>
+			
+			{% autoescape off %}
+			{{run}}
+			{% endautoescape %}
+		</div>
+		<br>
+		<form method="POST" action="">{% csrf_token %}
+			{{ form2.as_p }}
+			<!--<p>*Required Field</p>-->
+			<input type='submit' value='Submit' name='form2' class='btn' />
+		</form>
+
+		<br><p>&nbsp;OR</p>
+
+		<form method="POST" action="">{% csrf_token %}
+			{{ form3.as_p }}
+			<input type='submit' value='Submit' name='form3' class='btn' />
+		</form>
+
+		<br>
+		<br>
+	</div>
+{% endblock %}

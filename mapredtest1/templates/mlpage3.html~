@@ -1,0 +1,7 @@
+{% extends "blankworkspace-ml.html" %}
+{% block mapred1 %}
+<div class='breadcrumb' id='my-div-m' style='background-color: white; margin-left: 100px;'>
+<h1>Predicted Price(in thousand dollars): <b>{{run}}</b></h1>
+</div>
+{% endblock %}
+

@@ -1,0 +1,156 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>BigMac Web Services - Home</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="{% static 'css/bootstrap.index.css' %}" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	</head>
+	<body>
+<div class="navbar-wrapper" style='margin-top: 0px;'>
+  <div class="container" style='margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;width: 100%;'>
+    <div class="navbar navbar-inverse navbar-static-top" style='background-color: #080808;'>
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="#">BigMac Web Services</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        </div>
+
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'img/Slider5.jpg' %}"  style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption" style='text-align: center;'>
+          <p></p>
+          <!--<p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a></p>-->
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'img/Slider2.jpg' %}" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <!--<p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>-->
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'img/Slider4.png' %}" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <!--<p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+<!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <a href='/MLHome/'><img class="img-circle" src="{% static 'img/ML(140).jpg' %}"></a>
+      <h2>ML Analysis</h2>
+      <p>Efficient Platform for Machine Learning Analysis.</p>
+      <p><a class="btn btn-default" href="#mod1">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <a href='/bigdash/'><img class="img-circle" src="{% static 'img/Hadoop(140).jpg' %}"></a>
+      <h2>Map-Reduce Analysis</h2>
+      <p>Analysis on Big Data .</p>
+      <p><a class="btn btn-default" href="#mod2">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <a href='http://192.168.43.154:8000'><img class="img-circle" src="{% static 'img/Cloud(140).jpg' %}"></a>
+      <h2>OS Rentals</h2>
+      <p>Use any Operating System you want.</p>
+      <p><a class="btn btn-default" href="#mod3">View details »</a></p>
+    </div>
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider" id='mod1'>
+
+  <div class="featurette">
+    <a href='/MLHome/'><img class="featurette-image img-circle pull-right" src="{% static 'img/ML(512).jpg' %}"></a>
+    <h2 class="featurette-heading">Machine Learning over <span class="text-muted">BIG Data</span></h2>
+    <p class="lead">Predictive analysis model targets users such as stock brokers (predicting future investments), meteorological department (weather forecast), game predictions etc.</p>
+  </div>
+
+  <hr class="featurette-divider" id='mod2'>
+
+  <div class="featurette">
+    <a href='/bigdash/'><img class="featurette-image img-circle pull-left" src="{% static 'img/Hadoop(512).jpg' %}"></a>
+    <h2 class="featurette-heading">BIG Data <span class="text-muted">Map-Reduce</span></h2>
+    <p class="lead">Big Data analytics target firms who process huge amount of data to devise future implementation strategies depending in the present trends of the society. 
+</p>
+  </div>
+
+  <hr class="featurette-divider" id='mod3'>
+ 
+  <div class="featurette">
+    <a href='http://192.168.43.154:8000'><img class="featurette-image img-circle pull-right" src="{% static 'img/Cloud(512).jpg' %}"></a>
+    <h2 class="featurette-heading">Operating System <span class="text-muted">Renting</span></h2>
+    <p class="lead"> Operating System Renting targets users and firms who require high-end operating systems and lack the infrastructure for its support.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>2016 @<a href='#'>BigMac Web Services</a></p>
+  </footer>
+
+</div><!-- /.container -->
+	<!-- script references -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.index.js' %}"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "blankworkspace-ml.html" %}
+
+{% block mapred1 %}
+
+
+<div class='breadcrumb' id='my-div' style='background-color: white;'>
+<form action="" method='POST'>{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

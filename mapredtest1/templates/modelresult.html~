@@ -1,0 +1,41 @@
+{% extends "blankworkspace-ml.html" %}
+
+{% block mapred1 %}
+
+<style>
+
+</style>
+
+<div class="jumbotron" id='my-div' style='background-color: white;width: 1100px; height: 250px;'>
+<div class='container'>
+<div class="row" style="text-align: center">
+		<div class='col-md-3' style='float: left; margin-left: 120px;'>	
+			<h1><a class="btn btn-primary btn-lg" href="/satisfied/" role="button"><h1>Satisfied with model</h1></a></h1>		     
+		</div>
+		<div class='col-md-3' >
+			<h1><a class="btn btn-primary btn-lg" href="/notsatisfied/" role="button"><h1>Not satisfied with model</h1></a></h1>		   
+		</div>  	
+</div>
+</div>
+</div>
+
+<div class="breadcrumb" id='my-div' style='width: 1100px;'>
+			
+					<iframe  id="my-ifame" src="/valpred/" widthh="900" />
+
+			</div>
+
+<!--
+<div class=breadcrumb id="my-div">
+<a href="/satisfied/" >Satisfied with model</a>
+</div>
+
+<div id="my-iframe">
+<iframe src="/root/Desktop/valpred.html"/>
+</div>
+<p>nefkjnkdsnkjnfds</p>
+<div id="my-div">
+<a href="/notsatisfied/" >Not satisfied with model</a>
+</div>
+-->
+{% endblock %}

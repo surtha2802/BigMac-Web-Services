@@ -1,0 +1,45 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+
+<!--<div align=center float=right width=50%>                      <iframe src="http://localhost:50070/explorer.html"/></div>   -->    
+
+
+<div float=left>
+<h2><b>Select a file from HDFS</b></h2>
+<form method='POST' action=''>{% csrf_token %}
+	<div class="form-group">
+		{{ form.as_p }}
+		<button type='submit' value='form11' name='form11' class='btn btn-default'>Submit</button>
+	</div>
+</form>
+</div>
+
+<br>
+<p>&nbsp;OR</p>
+<br>
+<div>
+<b><h2>Select a file from your system</b></h2>
+<form method='POST' action=''>{% csrf_token %}
+{{ form1.as_p }}
+<input type='submit' value='Submit' name='form22' class='btn' />
+
+
+</form>
+</div>
+
+<br>
+<br>
+
+<!--{% autoescape off %}
+{{run}}
+{% endautoescape %}-->
+
+<br>
+<br>
+
+<!--{% autoescape off %}
+{{run}}
+{% endautoescape %}-->
+
+{% endblock %}

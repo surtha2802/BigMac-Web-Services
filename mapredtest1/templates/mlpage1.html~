@@ -1,0 +1,22 @@
+{% extends "blankworkspace-ml.html" %}
+
+{% load staticfiles %}
+
+{% block mapred1 %}
+
+<div class='breadcrumb' id='my-div' style='background-color: white'><br>
+<div class='jumbotron'>
+<div class='row' style='margin: 20px;'>
+	<div class='col-md-4' style='float: left; text-align: center;'>
+		<a href="/mlpage2/" ><img src={% static 'img/Housing.jpg' %} /></a></br>
+		<a href="/mlpage2/" >House Pricing Model</a>
+	</div>
+	<div class='col-md-4' style='float: left; text-align: center;'>
+		<a href="#" ><img src={% static 'img/Finance.jpg' %} /></a><br>
+		<a href="#" >Stock Prediction</a>
+	</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

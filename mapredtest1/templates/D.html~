@@ -1,0 +1,18 @@
+<html>
+<body>
+<form method='POST' action=''>{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Submit'  class='btn' />
+</form>
+		{% if not w == '' %}
+                <div width=1000 height=1000>
+                    <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
+                    <marquee><h1>{{ w }}</h1></marquee>
+                </div>
+            	{% endif %}
+
+
+
+janskjckjcnajkcb scbjcjcks jcajck scbck skacbck sjcbkac kcbc sakcbacakjcbc akjcbac kac
+</body>
+</html>

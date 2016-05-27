@@ -1,0 +1,12 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+
+<a href="/mlpage5/" >Predictive</a>
+<br><br>
+<a href="#" >Predictive</a>
+<br><br>
+<a href="#" >Predictive</a>
+<br><br>
+
+{% endblock %}

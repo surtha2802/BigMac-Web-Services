@@ -1,0 +1,29 @@
+{% extends "blankworkspace-ml.html" %}
+
+{% block mapred1 %}
+
+<style>
+
+</style>
+
+
+<div class="breadcrumb" id='my-div' style='width: 1100px;height:500px;background-color:white;'>
+			
+					<iframe  id="my-ifame" src="/downmodel/" style='width: 800px; height:600px;' />
+
+			</div>
+
+<!--
+<div class=breadcrumb id="my-div">
+<a href="/satisfied/" >Satisfied with model</a>
+</div>
+
+<div id="my-iframe">
+<iframe src="/root/Desktop/valpred.html"/>
+</div>
+<p>nefkjnkdsnkjnfds</p>
+<div id="my-div">
+<a href="/notsatisfied/" >Not satisfied with model</a>
+</div>
+-->
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "blankworkspace.html" %}
+
+{% block mapred1 %}
+
+<style>
+#my-div
+{
+    width    : 280px;
+    height   : 100px;
+    float    :left
+    position : relative;
+   
+}
+</style>
+<div id="my-div">
+<a href="/satisfied/" >Satisfied with model</a>
+</div>
+<div id="my-div">
+<a href="/notsatisfied/" >Not satisfied with model</a>
+</div>
+<div id="my-div">
+<iframe src="192.168.43.10/valpred.html" height=50 width=50/>
+</div>
+<p>nefkjnkdsnkjnfds</p>
+
+{% endblock %}
