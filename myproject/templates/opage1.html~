@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<html>
+<body>
+m
+print {{form1}}
+
+<form method='POST' action=''>{% csrf_token %}
+<input type=image src="{% static 'img/Cirros.jpg' %}" alt="Cirros" width = 20%>
+<input type='submit' value='Cirros' name='Cirros' class='btn' />
+
+</form>
+<form method='POST' action=''>{% csrf_token %}
+<input type=image src="{% static 'img/Kolibri.jpg' %}" alt="Kolibri" width = 20%>
+<input type='submit' value='Kolibri' name='Kolibri' class='btn' />
+
+</form>
+<form method='POST' action=''>{% csrf_token %}
+<input type=image src="{% static 'img/Ubuntu.jpg' %}" alt="Ubuntu" width = 20%>
+<input type='submit' value='Ubuntu' name='Ubuntu' class='btn' />
+</form>
+<!--
+{% autoescape off %}
+{{form1}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form2}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form3}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form4}}
+{% endautoescape %}
+-->
+
+</body>
+</html>

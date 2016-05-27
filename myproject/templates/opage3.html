@@ -1,0 +1,32 @@
+{% extends "blankworkspace.html" %}
+
+{% block openstack2 %}
+                                <li>
+					<i class="icon-eye-open"></i>
+					<a href="/qrcode/">Generate QR Code</a>
+				</li>
+
+{% endblock %}
+
+{% block openstack3 %}
+                                <li>
+					<i class="icon-eye-open"></i>
+					<a href="{{run}}">Full Screen</a>
+				</li>
+
+{% endblock %}
+
+{% block openstack1 %}
+
+{% autoescape off %}
+<!--<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>-->
+<div class="breadcrumb" id="my-div">
+<iframe id="my-iframe" src="{{run}}" frameborder="0"/>
+
+</div>
+{% endautoescape %}
+{% endblock %}

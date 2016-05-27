@@ -1,0 +1,12 @@
+{% extends "blankworkspace.html" %}
+{% block openstack1 %}
+
+{% load staticfiles %}
+<form method='POST' action='' >{% csrf_token %}
+<ul style="list-style:none">
+{{ form.as_p }}
+<input type='submit' value='Create_os' name='Create_os' class='btn' />
+</ul>
+</form>
+
+{% endblock %}

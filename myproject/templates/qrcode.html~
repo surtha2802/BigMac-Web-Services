@@ -1,0 +1,12 @@
+{% extends "blankworkspace.html" %}
+{% load static %}
+{% block openstack1 %}
+			
+<div class="breadcrumb" id="q1">
+
+
+<img align=center src="{% static 'img/Kolibri.jpg' %}"  height=300 width=300 />
+</div>
+
+
+{% endblock %}

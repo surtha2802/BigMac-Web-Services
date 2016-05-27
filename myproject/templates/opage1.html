@@ -1,0 +1,53 @@
+{% extends "blankworkspace.html" %}
+
+{% block openstack1 %}
+
+{% load staticfiles %}
+
+<!--m
+print {{form1}}-->
+<div class="jumbotron" style='background-color: white'> 
+<div class="container">
+<div class="row" style="text-align: center">
+		<div class='col-lg-3'>
+			<form method='POST' action=''>{% csrf_token %}
+			<input type=image src="{% static 'img/Cirros-os.jpg' %}" alt="Cirros" width = 20% class='img-responsive img-circle'>
+			<input type='submit' value='Cirros' name='Cirros' class='btn' />
+			</form>
+		</div>
+		<div class='col-lg-3' >
+			<form method='POST' action=''>{% csrf_token %}
+			<input type=image src="{% static 'img/Kolibri-os.jpg' %}" alt="Kolibri" width = 20% class='img-responsive img-circle'>
+			<input type='submit' value='Kolibri' name='Kolibri' class='btn' />
+			</form>
+		</div>
+		<div class='col-lg-3' >
+			<form method='POST' action=''>{% csrf_token %}
+			<input type=image src="{% static 'img/Ubuntu-os.jpg' %}" alt="Ubuntu" width = 20% class='img-responsive img-circle'>
+			<input type='submit' value='Ubuntu' name='Ubuntu' class='btn' />
+			</form>
+		</div>
+
+</div>
+</div>
+</div>
+
+<!--
+{% autoescape off %}
+{{form1}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form2}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form3}}
+{% endautoescape %}
+
+{% autoescape off %}
+{{form4}}
+{% endautoescape %}
+-->
+
+{% endblock %}
